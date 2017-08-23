@@ -16,6 +16,7 @@ namespace LinkedInAbs2
         public String Company_Name { get; set; }
         public String Company_Size { get; set; }
         public String Company_Page { get; set; }
+        public String Company_Industry { get; set; }
 
 
     }

@@ -18,3 +18,5 @@ C:\git-proyects\lat\LinkedInAbs2\LinkedInAbs2\bin\Debug\WebDriver.Support.xml
 C:\git-proyects\lat\LinkedInAbs2\LinkedInAbs2\obj\Debug\LinkedInAbs2.csprojResolveAssemblyReference.cache
 C:\git-proyects\lat\LinkedInAbs2\LinkedInAbs2\obj\Debug\LinkedInAbs2.exe
 C:\git-proyects\lat\LinkedInAbs2\LinkedInAbs2\obj\Debug\LinkedInAbs2.pdb
+C:\git-proyects\lat\LinkedInAbs2\LinkedInAbs2\obj\Debug\LinkedInAbs2.Status_Form.resources
+C:\git-proyects\lat\LinkedInAbs2\LinkedInAbs2\obj\Debug\LinkedInAbs2.csproj.GenerateResource.Cache

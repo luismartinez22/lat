@@ -61,6 +61,7 @@ namespace LinkedInAbs2
                 Console.WriteLine(lead.Lead.Company_Name);
                 Console.WriteLine(lead.Lead.Company_Size);
                 Console.WriteLine(lead.Lead.Company_Page);
+                Console.WriteLine(lead.Lead.Company_Industry);
                 Console.WriteLine("");
 
                 lead.close();

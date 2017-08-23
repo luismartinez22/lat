@@ -15,12 +15,14 @@ namespace LinkedInAbs2
         Dictionary<String, String> selectors = new Dictionary<string, string>(){
             { "css_company_name", "#main > div.top-bar.with-wide-image.with-nav > div > div.left-entity > div > h1" },
             { "css_company_size", "#main > div.top-bar.with-wide-image.with-nav > div > div.left-entity > div > ul > li.size.detail" },
-            { "css_company_page", "#account-introduction > section.about-account > ul > li:nth-child(3) > p > a" }
+            { "css_company_page", "#account-introduction > section.about-account > ul > li:nth-child(3) > p > a" },
+            { "css_company_industry", "#main > div.top-bar.with-wide-image.with-nav > div > div.left-entity > div > ul > li.industry.detail" }
         };
 
         private IWebElement elem_company_name;
         private IWebElement elem_company_size;
         private IWebElement elem_company_page;
+        private IWebElement elem_company_industry;
 
         public Company_page_salesnav(IWebDriver driver)
         {
@@ -31,6 +33,7 @@ namespace LinkedInAbs2
             elem_company_size = wait.Until(ExpectedConditions.ElementExists(By.CssSelector(selectors["css_company_size"])));
             elem_company_name = driver.FindElement(By.CssSelector(selectors["css_company_name"]));
             elem_company_page = driver.FindElement(By.CssSelector(selectors["css_company_page"]));
+            elem_company_industry = driver.FindElement(By.CssSelector(selectors["css_company_industry"]));
         }
 
         public String get_company_name()
@@ -60,6 +63,18 @@ namespace LinkedInAbs2
             if (elem_company_page != null)
             {
                 return elem_company_page.Text;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public String get_company_industry()
+        {
+            if (elem_company_industry != null)
+            {
+                return elem_company_industry.Text;
             }
             else
             {

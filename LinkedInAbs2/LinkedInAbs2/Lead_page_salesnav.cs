@@ -18,7 +18,7 @@ namespace LinkedInAbs2
             { "css_elem_name", "#topcard .info-container .member-name" },
             { "css_elem_title", "#topcard .info-container .title" },
             { "css_elem_location", "#topcard .info-container .location-industry .location" },
-            { "css_elem_current_position", "#topcard > div.module-body > div > div.profile-info > ul:nth-child(5) > li" },
+            { "css_elem_current_position", "#topcard > div.module-body > div > div.profile-info > ul:nth-child(5) > li:nth-child(1)" },
             { "css_elem_company_link", "#experience .positions .position:nth-child(1) .position-info .company-name a" },
             { "css_elem_carret_open_connect", "#topcard > div.module-body > div > div.profile-actions > div > button > span" },
             { "css_elem_btn_connect", "#topcard > div.module-body > div > div.profile-actions > div > div > dl > dd > button" },
@@ -56,6 +56,7 @@ namespace LinkedInAbs2
             Lead.Name = elem_name.Text;
             Lead.Title = elem_title.Text;
             Lead.Location = elem_location.Text;
+            Lead.Current_Position = elem_current_position.Text;
 
             IWebElement aux_c = checkIfElementExists(driver, By.CssSelector(selectors["css_elem_company_link"]));
             if (aux_c != null)
@@ -70,6 +71,7 @@ namespace LinkedInAbs2
                 Lead.Company_Name = company_page.get_company_name();
                 Lead.Company_Size = company_page.get_company_size();
                 Lead.Company_Page = company_page.get_company_page();
+                Lead.Company_Industry = company_page.get_company_industry();
                 company_page.close();
                 driver.SwitchTo().Window(driver.WindowHandles[1]);
             }
