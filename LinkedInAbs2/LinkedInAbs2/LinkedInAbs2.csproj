@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Company_page_salesnav.cs" />
     <Compile Include="Lead.cs" />
     <Compile Include="Lead_page_salesnav.cs" />
     <Compile Include="Program.cs" />

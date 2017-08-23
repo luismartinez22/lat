@@ -26,7 +26,6 @@ namespace LinkedInAbs2
             { "css_elem_btn_connect_submit", "#connect-dialog .submit-button" }
         };
 
-
         private IWebElement elem_name;
         private IWebElement elem_title;
         private IWebElement elem_location;
@@ -38,7 +37,7 @@ namespace LinkedInAbs2
 
         private String lead_url;
         public Lead Lead { get; set; }
-        public Lead_page_salesnav(String lead_url, ChromeDriver driver)
+        public Lead_page_salesnav(ChromeDriver driver)
         {
             this.driver = driver;
             //this.lead_url = lead_url;
@@ -52,8 +51,7 @@ namespace LinkedInAbs2
             elem_name = wait.Until(ExpectedConditions.ElementExists(By.CssSelector(selectors["css_elem_name"])));
             elem_title = driver.FindElement(By.CssSelector(selectors["css_elem_title"]));
             elem_location = driver.FindElement(By.CssSelector(selectors["css_elem_location"]));
-            var all_actual_positions = driver.FindElement(By.CssSelector(selectors["css_elem_current_position"]));
-            elem_current_position = all_actual_positions;
+            elem_current_position = driver.FindElement(By.CssSelector(selectors["css_elem_current_position"]));
 
             Lead.Name = elem_name.Text;
             Lead.Title = elem_title.Text;
@@ -67,13 +65,13 @@ namespace LinkedInAbs2
                     .Click(aux_c)
                     .KeyUp(Keys.Control)
                     .Perform();
-                driver.SwitchTo().Window(driver.WindowHandles[1]);
+                driver.SwitchTo().Window(driver.WindowHandles[2]);
                 Company_page_salesnav company_page = new Company_page_salesnav(driver);
                 Lead.Company_Name = company_page.get_company_name();
                 Lead.Company_Size = company_page.get_company_size();
                 Lead.Company_Page = company_page.get_company_page();
                 company_page.close();
-                driver.SwitchTo().Window(driver.WindowHandles[0]);
+                driver.SwitchTo().Window(driver.WindowHandles[1]);
             }
         }
         private IWebElement checkIfElementExists(IWebDriver driver, By selector)
