@@ -1,8 +1,11 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,7 +13,7 @@ namespace LinkedInAbs2
 {
     class Company_page_salesnav
     {
-        private IWebDriver driver;
+        private ChromeDriver driver;
 
         Dictionary<String, String> selectors = new Dictionary<string, string>(){
             { "css_company_name", "#main > div.top-bar.with-wide-image.with-nav > div > div.left-entity > div > h1" },
@@ -24,7 +27,7 @@ namespace LinkedInAbs2
         private IWebElement elem_company_page;
         private IWebElement elem_company_industry;
 
-        public Company_page_salesnav(IWebDriver driver)
+        public Company_page_salesnav(ChromeDriver driver)
         {
             this.driver = driver;
 
@@ -81,6 +84,7 @@ namespace LinkedInAbs2
                 return null;
             }
         }
+
         public void close()
         {
             driver.SwitchTo().Window(driver.CurrentWindowHandle).Close();
